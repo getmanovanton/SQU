@@ -101,6 +101,9 @@ for (let i = 0; i < buttonLeft.length; i++){
 
 
 ///SLIDER CLIENTS
+
+
+
 let clientCards = document.getElementsByClassName("client");
 let slideHeight = document.getElementsByClassName("list");
 let slider = document.getElementById("slider");
@@ -138,7 +141,7 @@ BTNnext.addEventListener('click',function () {
         slideNumber[Count].classList.add('page__number-active');
 
    }
-   console.log(Count)
+
 });
 
 BTNprev.addEventListener('click',function () {
@@ -157,5 +160,5 @@ BTNprev.addEventListener('click',function () {
         slideNumber[Count].classList.add('page__number-active');
 
     }
-    console.log(Count)
+
 });
