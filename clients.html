@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clients</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="page-preload" class="preloader">
+    <div class="loader">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+            <image id="square_logo" data-name="square logo" width="100" height="100" xlink:href="data:img/png;base64,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"/>
+        </svg>
+    </div>
+</div>
+<header class="wrapper">
+    <div class="header-main">
+        <div class="menu">
+            <div id="id-btn" class="menu__btn">
+                <span id="id-spn" class="menu__burger"></span>
+            </div>
+            <nav id="id-nav" class="menu__link">
+                <ul>
+                    <li class="menu__list"><a class="menu__link-activeoff" href="index.html">Portfolio</a>
+                        <ul class="menu_sub">
+                            <li><a href="#">fashion</a></li>
+                            <li><a href="#">editorial</a></li>
+                            <li><a href="#">street</a></li>
+                            <li class="menu__list2"><a href="#">black white</a>
+                                <ul class="menu__sub2">
+                                    <li><a href="#">gallery 1</a></li>
+                                    <li><a href="#">gallery 2</a></li>
+                                    <li><a href="#">gallery 3</a></li>
+                                    <li><a href="#">gallery 4</a></li>
+                                    <li><a href="#">gallery 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">personal</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="menu__link-activeoff menu__link-activeon" href="#">clients</a></li>
+                    <li><a class="menu__link-activeoff" href="#">news</a></li>
+                    <li><a class="menu__link-activeoff" href="about.html">about me</a></li>
+                    <li><a class="menu__link-activeoff" href="contact.html">contact</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <a href="#" class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+                <image id="square_logo" data-name="square logo" width="100" height="100" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAOJ0lEQVR4nO1deYxkRRn/VdV7/XqunWNnZ69Z9mKX5VARRaKgcggiIUGJRDSGFUSHP+QfMQRFTUAWCASCihcE5AgJIWJQZA2HCkpUiHILS/Zij9nZnd25j+5+R5Wp6t6eru6ente99Xq6d/uXdDJdU69evfd11Vf1fb/vKzLxSqtAAzUD2hBFbaEhkBpDQyA1hoZAagwNgdQYGgKpMVhRdofQZtCmD4PEFqrvwh0ET7wNwZMGWqeg9nEgzetAaBzCOwQ+/SYEnzbQ9vzBvECIDdZ8CqzOy2D1XAFitWv/Fv4w/MFH4Y88iWD6HUB45TVPW0HbzoDdcw2sjvPU/WbaHoV/8BF4Q4+BJ94HRBC6XdbxRbC2M2faSu2AN/QQECTyKrbC7r4aJLY8WxSMPYdg/PmynmM2GN8YWl2XwjluU6bDZJZaAsLth7v3NniHHgnfWRqHs+qnsDovBtiCWWpxiNQeeAP3wD34kJRSqLZjK+5EbOk12e/BxMtIbr0cwh/T+2AtQvyE34O1nJotc/fcCnfgttDPUQrmdAihsBacC2ft/SCx3hLCUJVVndjqe2C1X6CunbN51gZn1S9gdX+thDCgHok4K2H33gi24OyKHmU+YUwg1FqIWO+NICQW+hpCbMSW36CunQus7bOwui4K37bVDWflHaC0rZLHmTcY0yEkfgJI03qtTPgjCIafgj/6Z1kB1sIvp+d92jJzXdM6EGc94B0s0TiDveRagLbOlPFpBGMvwh9+CtzbD9byCdjdl4M0HZ+tQuPrYC3ugztwt5rK6gHGBMKaNoCwHAXOk3D33qyUrBCuKpKKj/f0qZF0WBnLqYg6yxFMlmr7JLC2M7Qyf/Q5pHZ+ByJIz/HBxN8RjD6N+IbNIPbMiGPtZ4EM/gYimKgLgRibskjTyZreEN5+BGN/yQpDlQWT8EeeVv+bAQOJbyjdyeZT1SjJhT/4SFYYmcYRJN5FMPQ7vV9ssTYiax3mBJL30Nw7oL+w7HubgAim9MLcqaho44V6gCd3FK0aJN7Lu5bNscCoLRjch+StnuXmr9g+QCTBJ/6l9h9S8copq7LbzbJ/ESY2nfMHYwKRm7JcELk0pTEgKKyX2n2DWroSayFIbAmEN1wXL6saMCYQnnwvM0rS0wOJLQWxFkMUrJ5E2rzBp9O6JPG/Gnsl8wtjOoQndyqlfRhyOpJ7hwbKgzGBSNsP3H0zBcRCbPn3QJzjGiIpA+ZGiHcA/tjLWhmxu+H03gzC5lhFNZCFOVuWcOHtvxvCG9CKWcf5YAs+13jjIWHUQcXd3UjtuVnzScjVlrPyNtDmj0bzBEcZjHsMg9E/gY//QyuTlt24NPTZS47Nt1wGjAtE+g9Su66HSGzVymnrx2Avvc78ExxliMCnLsBTO5Dc9V3AH5opJjbsJdfAXnSl5uVrQEdkJIdg8t9wD9xfUB5bfr1y8TZQHNGxTqT5vX8TfGl9zbFpKU9h700gVldDJEUQOQ3I3fsT8DwLLGs/G7HlNyofeQM6IheI1Cfu3lshgvGcUgKr60uNpXARVIUo5489A7f/Ts1kLnfxseXfr8bt6wrVYS4KjmD4CfDpXMsuAWs/B/bCr9aVAylqVI1KKokI7sDPC8rtno0gVkcVH7m2UT1ur+Dwh59AMPqiVkyaNoA6a+rpnUWKqpOtvcFfQfAZn7ocHbSxL8mi6gLhks/r5lqEGVjbudXuRs2i6gIRwTB4crdWxlpPq/X3VDWYI8pJ5jhtArz94N6QpIRD8EQBG0WWSaFoCEElPVZgTCB29xWwui6B4BMqViMY/5synRRwsERQlK/VQBoGeVkEYC0g8mMvgeDj0nAFYKqgHsm39lZC8ySzdL0Msnfp9uksM/ps5WZgjuSQFxVFrZ6iJDjpXydOr1bGp9+ao/HCqCgaL75Uljxg/dqgkMRX9B4pvX3WVdTWRpgDmscREEX6VynMCSTxnvbgxFkBq/PSjFDI4acBbTkdtCl3mcsVUboUZBhc/ku1er6hk7sJA4tvAFt4md4vfwDgJZjch+spXlkOqy+2DLT1LC28QgqILTgHiOV4PqU5yN019wsKCWNTVpB4S+kGwjK7buIg1nsD2IIzVciAZCyy9nNhdV4IYi+aeR5/DMHkqyXbliOIT28BbT4xW2Z1nA+y5j54hx6H8AYVO97u/rrGfFf9GnuxUI8Vu0dii+ojySww0lyA2xF0nIdg/CX122Xt56mPjJ2c6f8wgll4xpXAWEib9G/Ej38UbMFnyrouGH0Bye1XQgQ6FTUf9qKNcFbdpQQdFjz5ARLvnBEqEFT+kOJrH1QsmXLgDz+N1M4+Y+EO5qYsfwTu7h+qX0zoa7xBuHt/HGrVFYw8g2DilfI6Jef7lnAmftmH1O4fQKR2h6iduSa5LdP/uafEsDC4XBAIpl9HcutGCBUBWyJiSXCIxBYkt12FYLpQPxQD9w8htaNPxZwgZOgztZcivvpesNaPh+o/T25BcvtG8Kk3SkcHCw988jUkt20ET24Lt2gICfPpmaTidlaDdVyM2OK+ghWVSO6Ce+A+BGObwVM7ywpdRmZqZG2fht1ztdJPM4QJAZHaD+HtA1U7f5It58ntSG3vQzBVWlelb0BBY72g7Rcg1vMt0GZ91can3oY7+AD42LPg3r7SP7wKEHm+LBo/BdRZAiE3hO6A+hUa6roaAXDWgFAG4Y0oBr58mfG1D4C2np6px1XMenJHH/jU6+X3314BEl+l/hbJD8C9PYb6XxxHYQIzChpfC0dOVW2fAk+8g+T2b4OrqbH2cdRmlGNN62Ev+xHc/lvAk+/XQI/C4ehN8UcoCGmGCLEprCVEmnwmF7mbKShzQ7IChUhApEW5JDgET6VXcqIcYci2nbIXnpU9x+yoikBkNgVn7W+1Mrf/psySt4x22CI4a345Ry0fPLUP/uhm8MmXIHi45DZyZy65YuW6k1O7r1dUJ1OoikBI8ylgnZ/XytjYs2ULBNKWlNdOMchAaHvxN+GPvQCvfxOC6TfnXl6TGGjbJ7WkMqGw95by6s/1iEZbmwWs+SOFN246MeTVFUImw+m4AM7xD4LVESGvCgIhxV++zBg0pz44clBnbZpLXIV7mUDkU5Z8ESS2rLDc6lD/S7t5K4dI9UO4mbAH1gLatLLAeSXznbCOS+APP17WfdTO3x2co5LZDHbR6xDp5ClChFNmcgO/Wnffz+AdnFH00mwTP+520M7cVE4UVucX4I8+KRl7odv2Bh80lpgsLCKfslTeRbu7sJy1pbM9GIa0jyU+uBbCPaDfL9ZTkI+lFhG9DpE5F4vlMyFNkcWISLN+MP5XvVAluKn9yK3oR4jyTRdOTYQ1Zb1zUYCnBiJrO0pELxCru7iukOv+WIRRuUZS0VYfkQtEKtniQZ5E5fRtIO99RS6Q5pNL/O9DUd++7hC5QFgJn7b0xpHZCG/HKCIViFxmkvhqvTDXV03jIPGITCh1lGcxF5EKRBHi8kZAMPkf7TsrMaUdCZjcsedCJeMsz38/H4hUIKxFV9rCGwKf/K9WRpXh0WSMIUmTFPKzWrt7Q7NV5hMRjxB9OpKUUMkQzKXNUKe3rGzYc94ztkJRf/S4RQFv8GFDpzJEi8g0qjIq5lOAElshgqH09HGYgSg3h9LeFehk57Cwur8C1prO6ytHBmk5FYTleCf5FLyBX8PP37mHgN1zFayOi7WK/thmuPs2GXpLhYhuiSM3g1ZnToFQiY4lw1EECRArLRBlZJQvsMKYEdZ2GtBWPAJLSD5W/60IZKrzCkCcJeqjPVYqWvZKdFMWa9ZNI8KH8A+mMzrkZLtWRsY8f7spEGcNrLYzK88NPA+ITCAyVCD3RahQNn8kPRJyonDl8jQymxYhsBZdAWfVvSDUnJ6KEtHpENap27CkQvXHlGIV/nhWhShdcwRWX8meDyZfy9xTBgMtBms5DcTJ7H+IpRjt8kQe98C9ZTFEZAhEPqeLT5bPfiwHkQmE2gv1qYhPpUMOVNDnSE7FuBYvUi78kec1B5U6cim+DvH1T2qLCtZ5EcihR9OjNCT84T/AHbgjr3K0x15EN2XZvXnnQ42nl52SM6WlJSegcYM2LeGpxYN38GGtmMaWle8Qk0wVqe+0T7gjlCpFZAKhLTrTRI0KOTokld/NSyXbYt7IyJNb9ZdH4nVhTolOIE15S1E5KuTokGEDST1Bpjp7JO98kCOGYi/mmkpIXWQdikQgyo/erDMA5ajInrST0EMSiN0BGsuzPR0hhLJb1ccxR7mIRCA0flKBU0pFVWVMJrl/pyGdVXnhzMcoIhFIMTpm7qjgcoPoDenXNJdJ4TxKEYFACEjBrz0dUzgDkYlrz7lK+k1M65E6hPF9iKT0y1PXNIgAdn5+xdhi/Tq7W+meejlNLSqY3xgWGBUPZ7XuK3mZ2q3La49xgRifstJMxfJtU8SW/K36dLuahHkdog4Dq4AiSoqMrGMQ5nWIPHmN5RgVZYrYiX+qE5w1WF2wOs7OOqqkU4laXXW4czCLCASSx1QUCbgDdyEYe0GrJ8+pZS1/zJwsnTFtWIWk7PmE3Xsd7KXXluxB4t0LwZNzpJcqA8YFQp0VWhKxtLm9yImffFLlCMkaM6QLNr6+oN58gsjRa82R7CbE0ePlwLgO0XNhZfwgxdyzPFVgCo+KElRPMC+Q5nwr75SWpzcLGTmVJ6j8a49FGJ+y+PSr4Ik3Zr7LdEdF9hZCpNQ568LXTSiSWipm8znwKfiHHtPbmSVLg3D3wj/0ePr410yiNPglcnKJlCJDiHJPHg3CO7zC4OjN5FCnqHoi5QZKoyGQGkNDIDWGhkBqDA2B1BgaAqklAPg/E8zz90aMmswAAAAASUVORK5CYII="/>
+            </svg>
+        </a>
+
+        <div class="navigaton">
+            <ul>
+                <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fas fa-share-alt-square"></i></a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fab fa-google-plus-g"></i></a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fas fa-envelope"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main class="wrapper">
+    <div id="slider">
+            <div class="list list-active">
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client1.png">
+                </div>
+                <div class="client__text">
+                    <h2>Daniel Jackson Shoots
+                        New Yorkers for i-D</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>25.08.2014</div>
+                    <div><i class="fas fa-comment"></i>4</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client2.png">
+                </div>
+                <div class="client__text">
+                    <h2>Derek Henderson Shoots Karen Walker / ITC Ethical
+                        Fashion Initiative Visible 2014 Campaignts Karen </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>14.02.2014</div>
+                    <div><i class="fas fa-comment"></i>34</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client3.png">
+                </div>
+                <div class="client__text">
+                    <h2>Anne & jack</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>4.05.2014</div>
+                    <div><i class="fas fa-comment"></i>54</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client4.png">
+                </div>
+                <div class="client__text">
+                    <h2>Amy Troost Shoots SS14
+                        Collections for The Last
+                        Magazine</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York..</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>12.08.2014</div>
+                    <div><i class="fas fa-comment"></i>124</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client5.png">
+                </div>
+                <div class="client__text">
+                    <h2>Paul Wetherell Shoots Meadham Kirchhoff SS14 Collection for i-D Walker.</h2>
+                    <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>23.08.2014</div>
+                    <div><i class="fas fa-comment"></i>23</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client6.png">
+                </div>
+                <div class="client__text">
+                    <h2>Will Davidson Shoots Jennifer Connelly for The Edit Ethical. </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>5.05.2014</div>
+                    <div><i class="fas fa-comment"></i>2</div>
+                </div>
+            </div>
+        </div>
+             <div class="list ">
+
+                 <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client1.png">
+                </div>
+                <div class="client__text">
+                    <h2>Daniel Jackson Shoots
+                        New Yorkers for i-D</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>25.08.2014</div>
+                    <div><i class="fas fa-comment"></i>4</div>
+                </div>
+            </div>
+
+                 <div class="client">
+                     <div class="client__img">
+                         <img alt="#" src="images/client5.png">
+                     </div>
+                     <div class="client__text">
+                         <h2>Paul Wetherell Shoots Meadham Kirchhoff SS14 Collection for i-D Walker.</h2>
+                         <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                         <a class="client__btn" href="#">read more</a>
+                     </div>
+                     <div class="client__info">
+                         <div><i class="far fa-calendar"></i>23.08.2014</div>
+                         <div><i class="fas fa-comment"></i>23</div>
+                     </div>
+                 </div>
+
+                 <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client3.png">
+                </div>
+                <div class="client__text">
+                    <h2>Anne & jack</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>4.05.2014</div>
+                    <div><i class="fas fa-comment"></i>54</div>
+                </div>
+            </div>
+                 <div class="client">
+                     <div class="client__img">
+                         <img alt="#" src="images/client2.png">
+                     </div>
+                     <div class="client__text">
+                         <h2>Derek Henderson Shoots Karen Walker / ITC Ethical
+                             Fashion Initiative Visible 2014 Campaignts Karen </h2>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                         <a class="client__btn" href="#">read more</a>
+                     </div>
+                     <div class="client__info">
+                         <div><i class="far fa-calendar"></i>14.02.2014</div>
+                         <div><i class="fas fa-comment"></i>34</div>
+                     </div>
+                 </div>
+                 <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client4.png">
+                </div>
+                <div class="client__text">
+                    <h2>Amy Troost Shoots SS14
+                        Collections for The Last
+                        Magazine</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York..</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>12.08.2014</div>
+                    <div><i class="fas fa-comment"></i>124</div>
+                </div>
+            </div>
+
+
+
+                 <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client6.png">
+                </div>
+                <div class="client__text">
+                    <h2>Will Davidson Shoots Jennifer Connelly for The Edit Ethical. </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>5.05.2014</div>
+                    <div><i class="fas fa-comment"></i>2</div>
+                </div>
+            </div>
+        </div>
+            <div class="list ">
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client1.png">
+                </div>
+                <div class="client__text">
+                    <h2>Daniel Jackson Shoots
+                        New Yorkers for i-D</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>25.08.2014</div>
+                    <div><i class="fas fa-comment"></i>4</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client2.png">
+                </div>
+                <div class="client__text">
+                    <h2>Derek Henderson Shoots Karen Walker / ITC Ethical
+                        Fashion Initiative Visible 2014 Campaignts Karen </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>14.02.2014</div>
+                    <div><i class="fas fa-comment"></i>34</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client3.png">
+                </div>
+                <div class="client__text">
+                    <h2>Anne & jack</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>4.05.2014</div>
+                    <div><i class="fas fa-comment"></i>54</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client4.png">
+                </div>
+                <div class="client__text">
+                    <h2>Amy Troost Shoots SS14
+                        Collections for The Last
+                        Magazine</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York..</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>12.08.2014</div>
+                    <div><i class="fas fa-comment"></i>124</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client5.png">
+                </div>
+                <div class="client__text">
+                    <h2>Paul Wetherell Shoots Meadham Kirchhoff SS14 Collection for i-D Walker.</h2>
+                    <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>23.08.2014</div>
+                    <div><i class="fas fa-comment"></i>23</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client6.png">
+                </div>
+                <div class="client__text">
+                    <h2>Will Davidson Shoots Jennifer Connelly for The Edit Ethical. </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>5.05.2014</div>
+                    <div><i class="fas fa-comment"></i>2</div>
+                </div>
+            </div>
+        </div>
+            <div class="list ">
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client1.png">
+                </div>
+                <div class="client__text">
+                    <h2>Daniel Jackson Shoots
+                        New Yorkers for i-D</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>25.08.2014</div>
+                    <div><i class="fas fa-comment"></i>4</div>
+                </div>
+            </div>
+                <div class="client">
+                    <div class="client__img">
+                        <img alt="#" src="images/client6.png">
+                    </div>
+                    <div class="client__text">
+                        <h2>Will Davidson Shoots Jennifer Connelly for The Edit Ethical. </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                        <a class="client__btn" href="#">read more</a>
+                    </div>
+                    <div class="client__info">
+                        <div><i class="far fa-calendar"></i>5.05.2014</div>
+                        <div><i class="fas fa-comment"></i>2</div>
+                    </div>
+                </div>
+                <div class="client">
+                    <div class="client__img">
+                        <img alt="#" src="images/client4.png">
+                    </div>
+                    <div class="client__text">
+                        <h2>Amy Troost Shoots SS14
+                            Collections for The Last
+                            Magazine</h2>
+                        <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                            casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York..</p>
+                        <a class="client__btn" href="#">read more</a>
+                    </div>
+                    <div class="client__info">
+                        <div><i class="far fa-calendar"></i>12.08.2014</div>
+                        <div><i class="fas fa-comment"></i>124</div>
+                    </div>
+                </div>
+
+                <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client3.png">
+                </div>
+                <div class="client__text">
+                    <h2>Anne & jack</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>4.05.2014</div>
+                    <div><i class="fas fa-comment"></i>54</div>
+                </div>
+            </div>
+
+
+
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client5.png">
+                </div>
+                <div class="client__text">
+                    <h2>Paul Wetherell Shoots Meadham Kirchhoff SS14 Collection for i-D Walker.</h2>
+                    <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>23.08.2014</div>
+                    <div><i class="fas fa-comment"></i>23</div>
+                </div>
+            </div>
+                <div class="client">
+                    <div class="client__img">
+                        <img alt="#" src="images/client2.png">
+                    </div>
+                    <div class="client__text">
+                        <h2>Derek Henderson Shoots Karen Walker / ITC Ethical
+                            Fashion Initiative Visible 2014 Campaignts Karen </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                        <a class="client__btn" href="#">read more</a>
+                    </div>
+                    <div class="client__info">
+                        <div><i class="far fa-calendar"></i>14.02.2014</div>
+                        <div><i class="fas fa-comment"></i>34</div>
+                    </div>
+                </div>
+
+        </div>
+            <div class="list ">
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client1.png">
+                </div>
+                <div class="client__text">
+                    <h2>Daniel Jackson Shoots
+                        New Yorkers for i-D</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>25.08.2014</div>
+                    <div><i class="fas fa-comment"></i>4</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client2.png">
+                </div>
+                <div class="client__text">
+                    <h2>Derek Henderson Shoots Karen Walker / ITC Ethical
+                        Fashion Initiative Visible 2014 Campaignts Karen </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>14.02.2014</div>
+                    <div><i class="fas fa-comment"></i>34</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client3.png">
+                </div>
+                <div class="client__text">
+                    <h2>Anne & jack</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>4.05.2014</div>
+                    <div><i class="fas fa-comment"></i>54</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client4.png">
+                </div>
+                <div class="client__text">
+                    <h2>Amy Troost Shoots SS14
+                        Collections for The Last
+                        Magazine</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York..</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>12.08.2014</div>
+                    <div><i class="fas fa-comment"></i>124</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client5.png">
+                </div>
+                <div class="client__text">
+                    <h2>Paul Wetherell Shoots Meadham Kirchhoff SS14 Collection for i-D Walker.</h2>
+                    <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>23.08.2014</div>
+                    <div><i class="fas fa-comment"></i>23</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client6.png">
+                </div>
+                <div class="client__text">
+                    <h2>Will Davidson Shoots Jennifer Connelly for The Edit Ethical. </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>5.05.2014</div>
+                    <div><i class="fas fa-comment"></i>2</div>
+                </div>
+            </div>
+        </div>
+            <div class="list ">
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client1.png">
+                </div>
+                <div class="client__text">
+                    <h2>Daniel Jackson Shoots
+                        New Yorkers for i-D</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>25.08.2014</div>
+                    <div><i class="fas fa-comment"></i>4</div>
+                </div>
+            </div>
+
+
+                <div class="client">
+                    <div class="client__img">
+                        <img alt="#" src="images/client5.png">
+                    </div>
+                    <div class="client__text">
+                        <h2>Paul Wetherell Shoots Meadham Kirchhoff SS14 Collection for i-D Walker.</h2>
+                        <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                        <a class="client__btn" href="#">read more</a>
+                    </div>
+                    <div class="client__info">
+                        <div><i class="far fa-calendar"></i>23.08.2014</div>
+                        <div><i class="fas fa-comment"></i>23</div>
+                    </div>
+                </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client3.png">
+                </div>
+                <div class="client__text">
+                    <h2>Anne & jack</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>4.05.2014</div>
+                    <div><i class="fas fa-comment"></i>54</div>
+                </div>
+            </div>
+                <div class="client">
+                    <div class="client__img">
+                        <img alt="#" src="images/client2.png">
+                    </div>
+                    <div class="client__text">
+                        <h2>Derek Henderson Shoots Karen Walker / ITC Ethical
+                            Fashion Initiative Visible 2014 Campaignts Karen </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                        <a class="client__btn" href="#">read more</a>
+                    </div>
+                    <div class="client__info">
+                        <div><i class="far fa-calendar"></i>14.02.2014</div>
+                        <div><i class="fas fa-comment"></i>34</div>
+                    </div>
+                </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client4.png">
+                </div>
+                <div class="client__text">
+                    <h2>Amy Troost Shoots SS14
+                        Collections for The Last
+                        Magazine</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York..</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>12.08.2014</div>
+                    <div><i class="fas fa-comment"></i>124</div>
+                </div>
+            </div>
+                <div class="client">
+
+
+
+                <div class="client__img">
+                    <img alt="#" src="images/client6.png">
+                </div>
+                <div class="client__text">
+                    <h2>Will Davidson Shoots Jennifer Connelly for The Edit Ethical. </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>5.05.2014</div>
+                    <div><i class="fas fa-comment"></i>2</div>
+                </div>
+            </div>
+        </div>
+            <div class="list ">
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client1.png">
+                </div>
+                <div class="client__text">
+                    <h2>Daniel Jackson Shoots
+                        New Yorkers for i-D</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>25.08.2014</div>
+                    <div><i class="fas fa-comment"></i>4</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client2.png">
+                </div>
+                <div class="client__text">
+                    <h2>Derek Henderson Shoots Karen Walker / ITC Ethical
+                        Fashion Initiative Visible 2014 Campaignts Karen </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>14.02.2014</div>
+                    <div><i class="fas fa-comment"></i>34</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client3.png">
+                </div>
+                <div class="client__text">
+                    <h2>Anne & jack</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>4.05.2014</div>
+                    <div><i class="fas fa-comment"></i>54</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client4.png">
+                </div>
+                <div class="client__text">
+                    <h2>Amy Troost Shoots SS14
+                        Collections for The Last
+                        Magazine</h2>
+                    <p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray,
+                        casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York..</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>12.08.2014</div>
+                    <div><i class="fas fa-comment"></i>124</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client5.png">
+                </div>
+                <div class="client__text">
+                    <h2>Paul Wetherell Shoots Meadham Kirchhoff SS14 Collection for i-D Walker.</h2>
+                    <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>23.08.2014</div>
+                    <div><i class="fas fa-comment"></i>23</div>
+                </div>
+            </div>
+            <div class="client">
+                <div class="client__img">
+                    <img alt="#" src="images/client6.png">
+                </div>
+                <div class="client__text">
+                    <h2>Will Davidson Shoots Jennifer Connelly for The Edit Ethical. </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, purus id mollis pharetra, lacus turpis dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</p>
+                    <a class="client__btn" href="#">read more</a>
+                </div>
+                <div class="client__info">
+                    <div><i class="far fa-calendar"></i>5.05.2014</div>
+                    <div><i class="fas fa-comment"></i>2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-menu">
+        <button id="list-prev">prev</button>
+        <div class="list-number">
+            <div class="page__number page__number-active">1</div>
+            <div class="page__number">2</div>
+            <div class="page__number">3</div>
+            <div class="page__number">4</div>
+            <div class="page__number">5</div>
+            <div class="page__number">6</div>
+            <div class="page__number">7</div>
+        </div>
+        <button id="list-next">next</button>
+    </div>
+</main>
+<footer>
+    <div class="created">
+        <p>Created by 2ndself.com, with  <i class="fas fa-heart"></i> <br>
+            exclusive for theuncreativelab.com</p>
+    </div>
+    <div class="rights">
+        <p>&copy; 2014 Square. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="js/index.js"></script>
+</body>
+</html>
