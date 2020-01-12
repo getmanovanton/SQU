@@ -8,6 +8,8 @@ document.body.onload = function() {
             preloader.classList.add('done')
         }
     }, 1000);
+
+    sliderAdaptive();
 };
 
 ///  HEADER MENU
@@ -56,44 +58,50 @@ for (let i = 0; i < sizing.length; i++) {
 }
 
 ///SLIDER DESCRIPTION BUTTONS
+
+
 let descript = document.getElementsByClassName('slider__controller');
 let photoes = document.getElementsByClassName('slider__photo');
 let descriptCount = 0;
 let buttonRight = document.getElementsByClassName('right-btn');
+let buttonLeft = document.getElementsByClassName('left-btn');
+let removeDescriptClass = function () {
+    descript[descriptCount].classList.remove('slider__controller-active');
+    photoes[descriptCount].classList.remove('slider__photo-active');
+};
+let addDescriptClass = function () {
+    descript[descriptCount].classList.add('slider__controller-active');
+    photoes[descriptCount].classList.add('slider__photo-active');
+};
+
+
+
 for (let i = 0; i < buttonRight.length; i++){
     buttonRight[i].addEventListener('click', function () {
         if(descriptCount <= descript.length -2){
-            descript[descriptCount].classList.remove('slider__controller-active');
-            photoes[descriptCount].classList.remove('slider__photo-active');
+            removeDescriptClass();
             descriptCount = descriptCount + 1;
-            descript[descriptCount].classList.add('slider__controller-active');
-            photoes[descriptCount].classList.add('slider__photo-active');
+            addDescriptClass();
         }
         else {
-            descript[descriptCount].classList.remove('slider__controller-active');
-            photoes[descriptCount].classList.remove('slider__photo-active');
+            removeDescriptClass();
             descriptCount = 0;
-            descript[descriptCount].classList.add('slider__controller-active');
-            photoes[descriptCount].classList.add('slider__photo-active');
+            addDescriptClass();
         }
     })
 }
-let buttonLeft = document.getElementsByClassName('left-btn');
+
 for (let i = 0; i < buttonLeft.length; i++){
     buttonLeft[i].addEventListener('click', function () {
         if(descriptCount > 0){
-            descript[descriptCount].classList.remove('slider__controller-active');
-            photoes[descriptCount].classList.remove('slider__photo-active');
+            removeDescriptClass();
             descriptCount = descriptCount - 1;
-            descript[descriptCount].classList.add('slider__controller-active');
-            photoes[descriptCount].classList.add('slider__photo-active');
+            addDescriptClass();
         }
         else {
-            descript[descriptCount].classList.remove('slider__controller-active');
-            photoes[descriptCount].classList.remove('slider__photo-active');
+            removeDescriptClass();
             descriptCount = descript.length - 1;
-            descript[descriptCount].classList.add('slider__controller-active');
-            photoes[descriptCount].classList.add('slider__photo-active');
+            addDescriptClass();
         }
     })
 }
@@ -108,15 +116,24 @@ let clientCards = document.getElementsByClassName("client");
 let slideHeight = document.getElementsByClassName("list");
 let slider = document.getElementById("slider");
 let slideNumber = document.getElementsByClassName("page__number");
-let BTNnext = document.getElementById("list-next");
-let BTNprev = document.getElementById("list-prev");
-
+let buttonNext = document.getElementById("list-next");
+let buttonPrev = document.getElementById("list-prev");
 let Count = 0;
+let removeSliderClass = function () {
+    slideHeight[Count].classList.remove("list-active");
+    slideNumber[Count].classList.remove('page__number-active');
+};
+let addSliderClass = function () {
+    slideHeight[Count].classList.add("list-active");
+    slideNumber[Count].classList.add('page__number-active');
+};
+let sliderAdaptive = function () {
+    for(let i=0; i < slideHeight.length; i++) {
+        let Height = slideHeight[i].offsetHeight;
+        slider.style.height = Height + 'px';
+    }
+};
 
-for(let i=0; i < slideHeight.length; i++) {
-    let Height = slideHeight[i].offsetHeight;
-    slider.style.height = Height + 'px';
-}
 
 for(let i=0; i < clientCards.length; i++){
     if(i%2 !== 0){
@@ -124,41 +141,30 @@ for(let i=0; i < clientCards.length; i++){
     }
 }
 
-
-BTNnext.addEventListener('click',function () {
+buttonNext.addEventListener('click',function () {
    if (Count === slideHeight.length -1){
-       slideHeight[Count].classList.remove("list-active");
-       slideNumber[Count].classList.remove('page__number-active');
+       removeSliderClass();
        Count = 0;
-       slideHeight[Count].classList.add("list-active");
-       slideNumber[Count].classList.add('page__number-active');
+       addSliderClass();
    }
    else {
-        slideHeight[Count].classList.remove("list-active");
-        slideNumber[Count].classList.remove('page__number-active');
+       removeSliderClass();
         Count++;
-        slideHeight[Count].classList.add("list-active");
-        slideNumber[Count].classList.add('page__number-active');
+       addSliderClass();
 
    }
 
 });
 
-BTNprev.addEventListener('click',function () {
+buttonPrev.addEventListener('click',function () {
     if (Count === 0){
-        slideHeight[Count].classList.remove("list-active");
-        slideNumber[Count].classList.remove('page__number-active');
+        removeSliderClass();
         Count = slideHeight.length-1;
-        slideHeight[Count].classList.add("list-active");
-        slideNumber[Count].classList.add('page__number-active');
+        addSliderClass();
     }
     else {
-        slideHeight[Count].classList.remove("list-active");
-        slideNumber[Count].classList.remove('page__number-active');
+        removeSliderClass();
         Count--;
-        slideHeight[Count].classList.add("list-active");
-        slideNumber[Count].classList.add('page__number-active');
-
+        addSliderClass();
     }
-
 });
